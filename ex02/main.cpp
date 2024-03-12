@@ -6,35 +6,23 @@
 /*   By: cmartino <cmartino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 12:12:40 by cmartino          #+#    #+#             */
-/*   Updated: 2024/03/12 15:43:37 by cmartino         ###   ########.fr       */
+/*   Updated: 2024/03/12 12:02:39 by cmartino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
-int main(void)
+int main( void )
 {
-	// ClapTrap warrior("Ares"), champion("Hector"), hero("Achilles");
+    FragTrap ash( "Ash" );
+    FragTrap ash2( ash );
 
-	ClapTrap clap("Ash");
-	ClapTrap clap2(clap);
+    ash.attack( "the air" );
+    ash.takeDamage( 10 );
+    ash.beRepaired( 10 );
+    ash.highFiveGuys();
 
-	// warrior.setAttackDamage(3);
-	// champion.setAttackDamage(2);
-
-	// warrior.attack("Hector");
-	// champion.takeDamage(warrior.getAttackDamage());
-
-	// warrior.robotStatus();
-	// champion.robotStatus();
-
-	// warrior.beRepaired(1);
-	// champion.attack("Achilles");
-	// hero.takeDamage(champion.getAttackDamage());
-
-	// warrior.robotStatus();
-	// champion.robotStatus();
-	// hero.robotStatus();
-	
-	return (0);
+    return EXIT_SUCCESS;
 }

@@ -6,7 +6,7 @@
 /*   By: cmartino <cmartino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 12:12:44 by cmartino          #+#    #+#             */
-/*   Updated: 2024/03/12 15:52:00 by cmartino         ###   ########.fr       */
+/*   Updated: 2024/03/12 12:13:48 by cmartino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,8 @@ class ClapTrap {
 	
 	public: 
 		ClapTrap(std::string name); 
+		ClapTrap( const ClapTrap &rhs); 
 		~ClapTrap();
-
-		ClapTrap(const ClapTrap &);
 		ClapTrap& operator=( const ClapTrap &rhs);
 	
 		int			getHitPoints(); 
