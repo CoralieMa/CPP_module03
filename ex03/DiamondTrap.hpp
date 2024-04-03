@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmartino <cmartino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/26 12:12:40 by cmartino          #+#    #+#             */
-/*   Updated: 2024/04/03 11:43:04 by cmartino         ###   ########.fr       */
+/*   Created: 2024/04/03 12:18:46 by cmartino          #+#    #+#             */
+/*   Updated: 2024/04/03 16:47:33 by cmartino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+#ifndef DIAMONDTRAP_H
+# define DIAMONDTRAP_H
 
-int main( void )
-{
-    FragTrap warrior("Ares"), champion("Hector");
-    FragTrap hero(warrior);
+# include "FragTrap.hpp"
+# include "ScavTrap.hpp"
+ 
+class DiamondTrap : public FragTrap, public ScavTrap{
+	private:
+		std::string	_name;
+	
+	public: 
+		DiamondTrap(std::string name); 
+		DiamondTrap( const DiamondTrap &rhs); 
+		~DiamondTrap();
+		DiamondTrap& operator=( const DiamondTrap &rhs);
 
-    warrior.attack("Hector");
-    warrior.takeDamage( 10 );
-    warrior.beRepaired( 10 );
-    warrior.highFiveGuys();
-	hero.highFiveGuys();
-	champion.highFiveGuys();
-
-    return (0);
-}
+		void	whoAmI();
+		using	ScavTrap::attack;
+};
+ 
+#endif

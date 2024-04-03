@@ -6,35 +6,24 @@
 /*   By: cmartino <cmartino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 12:12:40 by cmartino          #+#    #+#             */
-/*   Updated: 2024/04/03 11:39:52 by cmartino         ###   ########.fr       */
+/*   Updated: 2024/04/03 16:50:58 by cmartino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "FragTrap.hpp"
 
-int main(void)
+#include "DiamondTrap.hpp"
+
+int main( void )
 {
-	ClapTrap warrior("Ares"), champion("Hector"), hero("Achilles");
+    DiamondTrap warrior("Ares");
+    DiamondTrap hero(warrior);
 
-	ClapTrap robot("Claptrap");
-	ClapTrap robot2(robot);
+    warrior.whoAmI();
 
-	warrior.setAttackDamage(3);
-	champion.setAttackDamage(2);
+    warrior.attack( "the air" );
+    warrior.takeDamage( 10 );
+    warrior.beRepaired( 10 );
 
-	warrior.attack("Hector");
-	champion.takeDamage(warrior.getAttackDamage());
-
-	warrior.robotStatus();
-	champion.robotStatus();
-
-	warrior.beRepaired(1);
-	champion.attack("Achilles");
-	hero.takeDamage(champion.getAttackDamage());
-
-	warrior.robotStatus();
-	champion.robotStatus();
-	hero.robotStatus();
-	
-	return (0);
+    return (0);
 }

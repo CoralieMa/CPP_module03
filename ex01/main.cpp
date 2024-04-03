@@ -6,7 +6,7 @@
 /*   By: cmartino <cmartino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 12:12:40 by cmartino          #+#    #+#             */
-/*   Updated: 2024/04/03 11:18:36 by cmartino         ###   ########.fr       */
+/*   Updated: 2024/04/03 11:40:21 by cmartino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,16 +44,3 @@ int main(void)
 	
 	return (0);
 }
-
-// int main( void )
-// {
-//     ScavTrap ash( "Ash" );
-//     ScavTrap ash2( ash );
-
-//     ash.attack( "the air" );
-//     ash.takeDamage( 10 );
-//     ash.beRepaired( 10 );
-//     ash.guardGate();
-
-//     return EXIT_SUCCESS;
-// }
