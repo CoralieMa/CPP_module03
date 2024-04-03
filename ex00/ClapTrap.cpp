@@ -6,7 +6,7 @@
 /*   By: cmartino <cmartino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 12:12:49 by cmartino          #+#    #+#             */
-/*   Updated: 2024/04/03 11:14:24 by cmartino         ###   ########.fr       */
+/*   Updated: 2024/04/03 17:15:25 by cmartino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,17 @@ ClapTrap::ClapTrap( const ClapTrap & rhs){
 }
 
 ClapTrap::~ClapTrap(){
-	std::cout << "ClapTrap " << this->_name << " is destroyed !" << std::endl;
+	std::cout << "ClapTrap " << _name << " is destroyed !" << std::endl;
 	return;
 }
 
 ClapTrap&	ClapTrap::operator=( const ClapTrap& rhs ){
 	if (this != &rhs)
 	{
-		this->_name = rhs.getName();
-		this->_hitPoints = rhs.getHitPoints();
-		this->_attackDamage = rhs.getAttackDamage();
-		this->_energyPoints = rhs.getEnergyPoints();
+		_name = rhs.getName();
+		_hitPoints = rhs.getHitPoints();
+		_attackDamage = rhs.getAttackDamage();
+		_energyPoints = rhs.getEnergyPoints();
 	}
 	return (*this);
 }
