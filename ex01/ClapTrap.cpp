@@ -6,7 +6,7 @@
 /*   By: cmartino <cmartino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 12:12:49 by cmartino          #+#    #+#             */
-/*   Updated: 2024/02/26 13:14:58 by cmartino         ###   ########.fr       */
+/*   Updated: 2024/04/03 11:16:44 by cmartino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,22 +29,29 @@ ClapTrap::~ClapTrap(){
 }
 
 ClapTrap&	ClapTrap::operator=( const ClapTrap& rhs ){
+	if (this != &rhs)
+	{
+		this->_name = rhs.getName();
+		this->_hitPoints = rhs.getHitPoints();
+		this->_attackDamage = rhs.getAttackDamage();
+		this->_energyPoints = rhs.getEnergyPoints();
+	}
 	return (*this);
 }
 
-std::string ClapTrap::getName(){ 
+std::string ClapTrap::getName() const{ 
 	return (_name); 
 }
 
-int ClapTrap::getHitPoints(){ 
+int ClapTrap::getHitPoints() const{ 
 	return (_hitPoints); 
 }
 
-int ClapTrap::getEnergyPoints(){ 
+int ClapTrap::getEnergyPoints() const{ 
 	return (_energyPoints); 
 }
 
-int ClapTrap::getAttackDamage(){ 
+int ClapTrap::getAttackDamage() const{ 
 	return (_attackDamage); 
 }
 

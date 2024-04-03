@@ -6,7 +6,7 @@
 /*   By: cmartino <cmartino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 14:22:19 by cmartino          #+#    #+#             */
-/*   Updated: 2024/03/12 11:54:22 by cmartino         ###   ########.fr       */
+/*   Updated: 2024/04/03 11:35:17 by cmartino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,14 @@ ScavTrap::~ScavTrap(){
 }
 
 ScavTrap&	ScavTrap::operator=( const ScavTrap& rhs ){
+	if (this != &rhs)
+	{
+		this->_name = rhs.getName();
+		this->_hitPoints = rhs.getHitPoints();
+		this->_attackDamage = rhs.getAttackDamage();
+		this->_energyPoints = rhs.getEnergyPoints();
+	}
+	std::cout << "ScapTrap " << this->_name << " is also a ScavTrap !" << std::endl;
 	return (*this);
 }
 

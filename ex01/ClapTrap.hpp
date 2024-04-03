@@ -6,7 +6,7 @@
 /*   By: cmartino <cmartino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 12:12:44 by cmartino          #+#    #+#             */
-/*   Updated: 2024/02/26 14:34:26 by cmartino         ###   ########.fr       */
+/*   Updated: 2024/04/03 11:15:54 by cmartino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,10 @@ class ClapTrap {
 		~ClapTrap(); 
 		ClapTrap& operator=( const ClapTrap &rhs);
 	
-		int			getHitPoints(); 
-		int			getEnergyPoints(); 
-		int			getAttackDamage();
-		std::string	getName(); 
+		int			getHitPoints() const; 
+		int			getEnergyPoints() const; 
+		int			getAttackDamage() const;
+		std::string	getName() const; 
 
 		void	setAttackDamage(int damage);
 

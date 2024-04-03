@@ -6,7 +6,7 @@
 /*   By: cmartino <cmartino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 11:44:30 by cmartino          #+#    #+#             */
-/*   Updated: 2024/03/12 12:03:14 by cmartino         ###   ########.fr       */
+/*   Updated: 2024/04/03 11:34:31 by cmartino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,14 @@ FragTrap::~FragTrap(){
 }
 
 FragTrap&	FragTrap::operator=( const FragTrap& rhs ){
+	if (this != &rhs)
+	{
+		this->_name = rhs.getName();
+		this->_hitPoints = rhs.getHitPoints();
+		this->_attackDamage = rhs.getAttackDamage();
+		this->_energyPoints = rhs.getEnergyPoints();
+	}
+	std::cout << "ScavTrap " << this->_name << " is also a FragTrap !" << std::endl;
 	return (*this);
 }
 
