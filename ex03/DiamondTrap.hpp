@@ -6,7 +6,7 @@
 /*   By: cmartino <cmartino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 12:18:46 by cmartino          #+#    #+#             */
-/*   Updated: 2024/04/03 16:47:33 by cmartino         ###   ########.fr       */
+/*   Updated: 2024/04/04 11:10:35 by cmartino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,9 @@ class DiamondTrap : public FragTrap, public ScavTrap{
 		~DiamondTrap();
 		DiamondTrap& operator=( const DiamondTrap &rhs);
 
-		void	whoAmI();
-		using	ScavTrap::attack;
+		void		whoAmI();
+		using		ScavTrap::attack;
+		std::string	getName() const;
 };
  
 #endif

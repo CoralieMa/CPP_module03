@@ -6,7 +6,7 @@
 /*   By: cmartino <cmartino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 12:12:40 by cmartino          #+#    #+#             */
-/*   Updated: 2024/04/03 16:58:10 by cmartino         ###   ########.fr       */
+/*   Updated: 2024/04/04 10:53:23 by cmartino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int main( void )
     DiamondTrap hero(warrior);
 
     warrior.whoAmI();
+	hero.whoAmI();
 
     warrior.attack( "Hector" );
     warrior.takeDamage( 10 );
