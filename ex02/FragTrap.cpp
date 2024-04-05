@@ -6,7 +6,7 @@
 /*   By: cmartino <cmartino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 11:44:30 by cmartino          #+#    #+#             */
-/*   Updated: 2024/04/03 17:15:25 by cmartino         ###   ########.fr       */
+/*   Updated: 2024/04/05 12:17:01 by cmartino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@ FragTrap::FragTrap(std::string name): ClapTrap(name){
 	_hitPoints = 100;
     _energyPoints = 100;
     _attackDamage = 30;
+	return;
+}
+
+FragTrap::FragTrap( const FragTrap& rhs): ClapTrap(rhs.getName()){
+	*this = rhs;
+	std::cout << "FragTrap " << _name << " is created with a copy constructor!" << std::endl;
 	return;
 }
 

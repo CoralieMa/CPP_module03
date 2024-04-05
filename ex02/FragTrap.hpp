@@ -6,7 +6,7 @@
 /*   By: cmartino <cmartino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 11:44:26 by cmartino          #+#    #+#             */
-/*   Updated: 2024/04/03 11:35:57 by cmartino         ###   ########.fr       */
+/*   Updated: 2024/04/05 12:12:31 by cmartino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ class FragTrap : public ClapTrap{
 		bool	_guardingGate;
 	
 	public: 
-		FragTrap(std::string name); 
+		FragTrap(std::string name);
+		FragTrap( const FragTrap &rhs); 
 		~FragTrap(); 
 		FragTrap& operator=( const FragTrap &rhs);
 

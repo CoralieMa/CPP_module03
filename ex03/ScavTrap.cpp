@@ -6,7 +6,7 @@
 /*   By: cmartino <cmartino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 14:22:19 by cmartino          #+#    #+#             */
-/*   Updated: 2024/04/03 17:15:25 by cmartino         ###   ########.fr       */
+/*   Updated: 2024/04/05 11:54:28 by cmartino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,12 @@ ScavTrap::ScavTrap(std::string name): ClapTrap(name){
     _energyPoints = 50;
     _attackDamage = 20;
 	_guardingGate = false;
+	return;
+}
+
+ScavTrap::ScavTrap( const ScavTrap& rhs): ClapTrap(rhs.getName()) {
+	*this = rhs;
+	std::cout << "ScavTrap " << _name << " is created with a copy constructor!" << std::endl;
 	return;
 }
 
