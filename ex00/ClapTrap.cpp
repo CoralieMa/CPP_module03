@@ -6,7 +6,7 @@
 /*   By: cmartino <cmartino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 12:12:49 by cmartino          #+#    #+#             */
-/*   Updated: 2024/04/03 17:15:25 by cmartino         ###   ########.fr       */
+/*   Updated: 2024/04/05 15:16:41 by cmartino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,10 @@ void ClapTrap::setAttackDamage(int damage){
 		_attackDamage = 3000;
 		std::cout << "The biggest attack is 3000 hit points" << std::cout;
 	}
+	if (_attackDamage < 1){
+		_attackDamage = 1;
+		std::cout << "The lowest attack is 1 hit points" << std::cout;
+	}
 	return ; 
 }
 
@@ -84,6 +88,11 @@ void ClapTrap::takeDamage(unsigned int amount){
 }
 
 void ClapTrap::beRepaired(unsigned int amount){
+	if (_energyPoints == 0)
+	{
+		std::cout << "ClapTrap " << _name << " has no energy point" << std::endl;
+		return ;
+	}
 	_hitPoints += amount;
 	if (_hitPoints > 10000){
 		std::cout << "ClapTrap " << _name << " has reached the maximum number of hit points" << std::endl;
