@@ -6,14 +6,14 @@
 /*   By: cmartino <cmartino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 14:22:19 by cmartino          #+#    #+#             */
-/*   Updated: 2024/04/05 12:09:26 by cmartino         ###   ########.fr       */
+/*   Updated: 2024/04/05 15:21:19 by cmartino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap(std::string name): ClapTrap(name){
-	std::cout << "ScavTrap " << _name << " is also a ScavTrap !" << std::endl;
+	std::cout << "ClapTrap " << _name << " is also a ScavTrap !" << std::endl;
 	_hitPoints = 100;
     _energyPoints = 50;
     _attackDamage = 20;
@@ -40,7 +40,6 @@ ScavTrap&	ScavTrap::operator=( const ScavTrap& rhs ){
 		_attackDamage = rhs.getAttackDamage();
 		_energyPoints = rhs.getEnergyPoints();
 	}
-	std::cout << "ScapTrap " << _name << " is also a ScavTrap !" << std::endl;
 	return (*this);
 }
 

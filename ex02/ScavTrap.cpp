@@ -6,14 +6,14 @@
 /*   By: cmartino <cmartino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 14:22:19 by cmartino          #+#    #+#             */
-/*   Updated: 2024/04/05 11:56:11 by cmartino         ###   ########.fr       */
+/*   Updated: 2024/04/05 15:21:19 by cmartino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap(std::string name): ClapTrap(name){
-	std::cout << "ScapTrap " << _name << " is also a ScavTrap !" << std::endl;
+	std::cout << "ClapTrap " << _name << " is also a ScavTrap !" << std::endl;
 	_hitPoints = 100;
     _energyPoints = 50;
     _attackDamage = 20;
@@ -21,12 +21,11 @@ ScavTrap::ScavTrap(std::string name): ClapTrap(name){
 	return;
 }
 
-ScavTrap::ScavTrap( const ScavTrap& rhs): ClapTrap(rhs.getName()) {
+ScavTrap::ScavTrap( const ScavTrap& rhs): ClapTrap(rhs.getName()){
 	*this = rhs;
 	std::cout << "ScavTrap " << _name << " is created with a copy constructor!" << std::endl;
 	return;
 }
-
 
 ScavTrap::~ScavTrap(){
 	std::cout << "ScavTrap " << _name << " is destroyed !" << std::endl;
@@ -41,7 +40,6 @@ ScavTrap&	ScavTrap::operator=( const ScavTrap& rhs ){
 		_attackDamage = rhs.getAttackDamage();
 		_energyPoints = rhs.getEnergyPoints();
 	}
-	std::cout << "ScapTrap " << _name << " is also a ScavTrap !" << std::endl;
 	return (*this);
 }
 
@@ -62,7 +60,7 @@ void ScavTrap::guardGate(void){
         return;
     }
 	_guardingGate = true;
-	std::cout << "ScavTrap " << _name << " is is now in Gate keeper mode" << std::endl;
+	std::cout << "ScavTrap " << _name << " is now in Gate keeper mode" << std::endl;
     _energyPoints -= 1;
 	return;
 }
