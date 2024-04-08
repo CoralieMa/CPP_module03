@@ -6,7 +6,7 @@
 /*   By: cmartino <cmartino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 12:18:48 by cmartino          #+#    #+#             */
-/*   Updated: 2024/04/05 11:51:39 by cmartino         ###   ########.fr       */
+/*   Updated: 2024/04/08 11:33:48 by cmartino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ DiamondTrap::DiamondTrap(std::string name): ClapTrap(name + "_clap_name"), FragT
 	return;
 }
 
-DiamondTrap::DiamondTrap( const DiamondTrap& rhs): ClapTrap(rhs.getName()), FragTrap(rhs.getName()), ScavTrap(rhs.getName()){
+DiamondTrap::DiamondTrap( const DiamondTrap& rhs): ClapTrap(rhs.getName() + "_clap_name"), FragTrap(rhs.getName()), ScavTrap(rhs.getName()){
 	*this = rhs;
 	std::cout << "DiamondTrap " << _name << " is created with a copy constructor!!" << std::endl;
 	return;
@@ -35,10 +35,9 @@ DiamondTrap::~DiamondTrap(){
 DiamondTrap&	DiamondTrap::operator=( const DiamondTrap& rhs ){
 	if (this != &rhs)
 	{
-		_name = rhs.getName();
-		_hitPoints = rhs.getHitPoints();
-		_energyPoints = rhs.getEnergyPoints();
-		_attackDamage = rhs.getAttackDamage();
+		_hitPoints = FragTrap::_hitPoints;
+		_energyPoints = ScavTrap::_energyPoints;
+		_attackDamage = FragTrap::_attackDamage;
 	}
 	return (*this);
 }
